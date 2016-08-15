@@ -18,7 +18,7 @@ This is a substitution cipher detector & decoder plugin for Microsoft Office doc
     * https://github.com/DidierStevens/DidierStevensSuite/blob/master/oledump.py
   * oledump requires olefile python library: ```easy_install olefile```
 * Malicious Microsoft Office Document using encoded macros
-  * Specifically: UNC622 (FIN8) macros using substitution noise; also seen for Nymaim ransomware delivery
+  * Specifically: macros substitution noise used by FIN8; also seen for Nymaim ransomware delivery
   * Try it yourself: 
      * https://www.virustotal.com/en/file/cba63594f28e69405b5075013624075ef1a538be40a7c2402f84d33f9f6c2927/analysis/
      * ~~5df764298eaf8dd2be0514c3785c846d~~
