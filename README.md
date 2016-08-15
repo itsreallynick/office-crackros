@@ -19,14 +19,13 @@ This is a substitution cipher detector & decoder plugin for Microsoft Office doc
   * oledump requires olefile python library: ```easy_install olefile```
 * Malicious Microsoft Office Document using encoded macros
   * Specifically: Nymain / UNC622 (Now FIN8) macros using substitution noise
-  * Examples: 
+  * Try it yourself: 
      * https://www.virustotal.com/en/file/cba63594f28e69405b5075013624075ef1a538be40a7c2402f84d33f9f6c2927/analysis/
-     * 5df764298eaf8dd2be0514c3785c846d
-     * 6c82d4858d0d5dd4f6139cf44339f337
+     * ~~5df764298eaf8dd2be0514c3785c846d~~
+     * ~~6c82d4858d0d5dd4f6139cf44339f337~~
      * many more!
 
 ## To Do List:
 * ~~CRUSH IT.~~
 * Remove extraneous text in multiple line matches (improve regular expressions)
-
-> **“I Love you, Always Have, Always Will.”** - Zheng Bu
+* Add back in substitution / dropchar detection based on character histogramming
