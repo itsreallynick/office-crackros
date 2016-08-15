@@ -10,7 +10,6 @@ This is a substitution cipher detector & decoder plugin for Microsoft Office doc
   * Please understand that, like all good hacked together tools, I stopped as soon as it worked - with much room for improvement
   * If you found the tool helpful, let me know [@itsreallynick](https://twitter.com/itsreallynick)
 
----
 ## Requirements
 * oledump
   * Didier Stevens, who is awesome, created this tool
