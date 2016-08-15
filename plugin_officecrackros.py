@@ -5,7 +5,6 @@
 import re
 import string
 
-# Below snippet borrowed/inspired by De-Macrobfuscator.py by Daniel Pany: https://gitlab.services.mandiant.com/danpan/de-macrobfuscator
 def deobfuscate(text, key):
     # For every char in the key
     for i in range(len(key)):
@@ -18,7 +17,7 @@ def deobfuscate(text, key):
             # Otherwise, break
             else:
                 break;
-    # Return the string, unobfuscated
+    # Return unobfuscated string
     return text;
 
 class cOfficeCrackros(cPluginParent):
@@ -49,8 +48,6 @@ class cOfficeCrackros(cPluginParent):
                         text = re.sub('[()"]', '', matches)
                     else:
                         key = re.sub('[()"]', '', matches)
-                        #print 'TEXT ['+ str(counter-1) + ']: ' + text
-                        #print 'KEY  ['+ str(counter) +']: ' + key
                         result.append('DECODED STRING: ' + deobfuscate(text, key))
                     counter+=1
         return result
