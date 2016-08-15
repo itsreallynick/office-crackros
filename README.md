@@ -7,8 +7,8 @@ This is a substitution cipher detector & decoder plugin for Microsoft Office doc
 ### 2. run against suspect documents
    **Usage:** ```python oledump.py -p plugin_officecrackros <path/to/file.doc>```
 ### 3. let me know what you think
-  * Please understand that, like all good hacked together tools, I stopped as soon as it worked - which much room for improvement
-  * If you found the tool helpful, hit me up @itsreallynick
+  * Please understand that, like all good hacked together tools, I stopped as soon as it worked - with much room for improvement
+  * If you found the tool helpful, let me know [@itsreallynick](https://twitter.com/itsreallynick)
 
 ---
 ## Requirements
@@ -21,9 +21,6 @@ This is a substitution cipher detector & decoder plugin for Microsoft Office doc
   * Specifically: macros substitution noise used by FIN8; also seen for Nymaim ransomware delivery
   * Try it yourself: 
      * https://www.virustotal.com/en/file/cba63594f28e69405b5075013624075ef1a538be40a7c2402f84d33f9f6c2927/analysis/
-     * ~~5df764298eaf8dd2be0514c3785c846d~~
-     * ~~6c82d4858d0d5dd4f6139cf44339f337~~
-     * many more!
 
 ## To Do List:
 * ~~CRUSH IT.~~
