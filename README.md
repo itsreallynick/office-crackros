@@ -1,6 +1,6 @@
 # OfficeCrackros
 ##### Crack your macros like the math pros.
-This is a substitution cipher detector & decoder plugin for Microsoft Office documents. Essentially, this is Sigpedia for Macros. What I'm trying to say is I think you'll find this helpful if you can navigate all the trolling.
+This is a substitution cipher detector & decoder plugin for Microsoft Office documents. Essentially, this is Sigpedia for Macros. What I'm trying to say is I think you'll find this helpful if you can navigate all the trolling. **Feb 2017 Update:** This now supports PointsToInches character encoding (new FIN8 technique)!
 
 ## How To Use It
 ### 1. download teh scripts

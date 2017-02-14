@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # OfficeCrackros (substitution cipher detector/decoder) plugin for oledump.py by Nick Carr, while at Mandiant
 # 2016/06/01
+# Updated 2017/02/13 for Points2Inches (tricky FIN8 macro decoder)
 
 import re
 import string
@@ -22,7 +23,7 @@ def deobfuscate(text, key):
 
 class cOfficeCrackros(cPluginParent):
     macroOnly = True #observed Macros
-    name = 'Subsitution cipher detected: OfficeCrackros plugin by Nick Carr'
+    name = 'Sketchy cipher detected: OfficeCrackros plugin by Nick Carr'
 
     def __init__(self, name, stream, options):
         self.streamname = name
@@ -41,6 +42,7 @@ class cOfficeCrackros(cPluginParent):
 
             for obfuscated in re.findall(r'\(\".*\"\,\s\".*\"\)', self.stream):
                 # Pattern to match: ("<text, may include special chars>", "<key>")
+                # Substition cipher routine (dropchars)
                 self.ran = True
                 counter = 0
                 for matches in re.split(', "', obfuscated):
@@ -50,6 +52,19 @@ class cOfficeCrackros(cPluginParent):
                         key = re.sub('[()"]', '', matches)
                         result.append('DECODED STRING: ' + deobfuscate(text, key))
                     counter+=1
+
+            for points2inches in re.findall(r'.*\=.*VBA\.Chr\(PointsToInches\(.*\)', self.stream):
+                self.ran = True
+                p2i_function = re.split(' =',points2inches)[0]  # identifies function name for extraction
+    
+                for matchingline in re.findall(r'.*' + re.escape(p2i_function) + r'\(.*,.*\)', self.stream): # identifies full lines / context, excludes single item lists
+                    p2i_string = ''
+                    
+                    for encoded in re.findall(re.escape(p2i_function) + r'\([^\)]*\)', matchingline):
+                        p2i_array = re.split(p2i_function, encoded)[1]
+                        for points in eval(p2i_array):
+                            p2i_string += chr(points/72)
+                        result.append(re.sub(re.escape(p2i_function) + r'\([^\)]*\)', p2i_string.replace('\\','\\\\'), matchingline).replace('\\\\','\\'))
         return result
 
 AddPlugin(cOfficeCrackros)
